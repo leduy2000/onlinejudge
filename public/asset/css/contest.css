@@ -1,0 +1,13 @@
+.contest-item {
+    padding: 20px 30px;
+}
+
+.contest-item .ui-btn {
+    padding: 10px 15px;
+    width: 180px;
+    text-align: center;
+}
+
+.contest-title {
+    font-size: 20px;
+}

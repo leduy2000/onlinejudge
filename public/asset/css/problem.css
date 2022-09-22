@@ -1,0 +1,11 @@
+.problem-editor {
+    height: 600px;
+}
+
+.problem-output {
+    padding: 4px;
+    border: 2px solid gray;
+    min-height: 100px;
+    width: 100%;
+    resize: none;
+}

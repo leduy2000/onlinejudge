@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1200px;
+    min-width: 920px;
+    margin: 0 auto;
+}
+
+.modal {
+    background-color: #fff;
+    border: 1px solid #e3e3e3;
+    border-radius: 16px;
+    width: 478px;
+    height: fit-content;
+    margin: 40px auto;
+    padding: 48px;
+    text-align: left;
+    top: 0;
+}
+
+.modal-input {
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 14px;
+    margin: 6px 0;
+}
+
+.modal-label {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.modal-btn {
+    height: 50px;
+    width: 100%;
+}
+
+.msT {
+    margin-top: 10px;
+}
+
+.mlT {
+    margin-top: 20px;
+}
+
+.msR {
+    margin-right: 10px;
+}
+
+.psT {
+    padding-top: 10px;
+}
+
+.plT {
+    padding-top: 20px;
+}
+
+.psB {
+    padding-bottom: 10px;
+}
+
+.mT5 {
+    margin-top: 5px;
+}
+
+.mlB {
+    margin-bottom: 20px;
+}
+
+.btn-ui {
+    background-color: #04aa6d;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 3px;
+    align-items: center;
+}
+
+.btn-normal {
+    padding: 10px 15px;
+}
+
+.btn-white {
+    color: #1ba94c;
+    background-color: #ffffff;
+    border: 1px solid #1ba94c;
+}
+
+.flex1 {
+    display: flex; 
+    justify-content: space-between; 
+}
+
+.flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.content {
+    background-color: #f3f7f7;
+    min-height: 1200px;
+}
+
+.ui-card {
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 10%);
+    background-color: #ffffff;
+}
+
+.url {
+    cursor: pointer;
+}
+
+.txt-link {
+    color: #097bbf;
+}
+
+
+
+
