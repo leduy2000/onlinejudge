@@ -64,6 +64,10 @@ button {
     padding-top: 20px;
 }
 
+.plB {
+    padding-bottom: 30px;
+}
+
 .psB {
     padding-bottom: 10px;
 }
@@ -83,6 +87,10 @@ button {
     border: none;
     border-radius: 3px;
     align-items: center;
+}
+
+.center {
+    text-align: center;
 }
 
 .btn-normal {
@@ -116,6 +124,7 @@ button {
 .ui-card {
     box-shadow: 0 6px 16px 0 rgb(0 0 0 / 10%);
     background-color: #ffffff;
+    padding: 20px 30px;
 }
 
 .url {
@@ -126,6 +135,12 @@ button {
     color: #097bbf;
 }
 
+.span {
+    flex: 1;
+}
 
-
-
+p {
+    font-size: 16px;
+    line-height: 1.5em;
+    margin: 0;
+}

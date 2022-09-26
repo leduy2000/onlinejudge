@@ -9,3 +9,17 @@
     width: 100%;
     resize: none;
 }
+
+.problem-title {
+    font-size: 18px;
+    color: #0e141e;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.problem-label {
+    font-size: 20px;
+    color: #0e141e;
+    font-weight: 500;
+    line-height: 1.4;
+}
