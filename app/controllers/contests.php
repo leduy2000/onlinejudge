@@ -12,4 +12,9 @@ class Contests extends Controller {
         session_start();
         $this->view("master", ["page" => "contests/contests"]);
     }
+
+    public function create() {
+        session_start();
+        $this->view("master", ["page" => "contests/create"]);
+    }
 }

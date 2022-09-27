@@ -103,6 +103,12 @@ button {
     border: 1px solid #1ba94c;
 }
 
+.btn-green {
+    color: #ffffff;
+    background-color: #1ba94c;
+    border: 1px solid #1ba94c;
+}
+
 .flex1 {
     display: flex; 
     justify-content: space-between; 
@@ -143,4 +149,29 @@ p {
     font-size: 16px;
     line-height: 1.5em;
     margin: 0;
+}
+
+.input-row {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.input-label {
+    display: inline-block;
+    font-size: 16px;
+    color: #39424e;
+    width: 170px;
+}
+
+.normal-input {
+    width: 228px;
+    height: 40px;
+    font-size: 16px;
+}
+
+.page-label {
+    font-weight: 500;
+    margin: 5px 0;
+    font-size: 40px;
 }

@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="submission-label">Submissions</div>
+    <div class="page-label">Submissions</div>
     <div class="table-wrap">
         <div class="submission-list-header">
             <p class="span">Problem</p>
