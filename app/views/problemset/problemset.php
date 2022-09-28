@@ -1,7 +1,8 @@
 <div class="content">
     <div class="container">
         <div class="problem-label plT plB">Problems</div>
-        <div class="ui-card url">
+        <div id="js-problems"></div>
+        <!-- <div class="ui-card url">
             <div class="flex1">
                 <div>
                     <div class="problem-title psB">Hello World Contest #1: The Third Three Number Problem</div>
@@ -28,7 +29,7 @@
                 <button class="btn-normal ui-btn btn-white msL">Solve Challenge</button>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 
 <script>
@@ -42,6 +43,9 @@
     if (username) {
         $('#js-btn').html(`<a href="">${username}</a>`);
     } else {
-        $('#js-btn').html(`<button class="btn-ui normal-btn mT5" onclick="window.location.href='login';">Log In</button>`);
+        $('#js-btn').html(`<button class="btn-ui btn-normal mT5"
+             onclick="window.location.href='login';">Log In</button>`);
     }
+    var problems = JSON.parse('<?php echo $data['problems'] ?>');
+    Problem.board.practice(problems);
 </script>

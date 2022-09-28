@@ -11,6 +11,7 @@ class Controller {
     }
 
     public function view($layout, $data = []) {
+        // die(json_encode($data));
         require_once "../app/views/layouts/$layout.php";
     }
 }

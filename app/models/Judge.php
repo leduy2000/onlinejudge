@@ -14,7 +14,8 @@ class Judge {
         if ($language == 'cpp') {
             $exe_file = "$file_name.exe";
             shell_exec("g++ asset/submissions/$file_name.$language -o asset/submissions/$exe_file");
-            $output = shell_exec("D:/xampp/htdocs/onlinejudge/public/asset/submissions/$exe_file");
+            // $output = shell_exec("D:/xampp/htdocs/onlinejudge/public/asset/submissions/$exe_file");
+            $output = shell_exec("C:/xampp/htdocs/onlinejudge/public/asset/submissions/$exe_file");
             die($output);
         }
     }

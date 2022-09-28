@@ -42,7 +42,7 @@
 <div class="problem-editor" id="js-editor"></div>
 
 <div class="button-container">
-    <button class="btn-submit" onclick="Problem.form.submitCode()">Submit</button>
+    <button class="btn-submit" onclick="Problem.form.submit_code()">Submit</button>
 </div>
 
 <div class="problem-output"></div>

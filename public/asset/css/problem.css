@@ -23,3 +23,19 @@
     font-weight: 500;
     line-height: 1.4;
 }
+
+.problem-input-difficulty {
+    width: 228px;
+    height: 40px;
+    font-size: 16px;
+}
+
+.problem-input-sample-io {
+    width: 300px;
+    height: 100px;
+}
+
+.problem-input-statement {
+    width: 800px;
+    height: 200px;
+}

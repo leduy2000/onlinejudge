@@ -15,4 +15,12 @@ class DB {
     protected function execute($sql) {
         return $this->conn->query($sql);
     }
+
+    public function fetch($rows) {
+        $res = [];
+        while ($row = $rows->fetch_assoc()) {
+            $res[] = $row;
+        }
+        return $res;
+    }
 }

@@ -154,7 +154,13 @@ p {
 .input-row {
     margin-bottom: 20px;
     margin-top: 20px;
-    align-items: center;
+    align-items: center;   
+}
+
+.input-row textarea {
+    vertical-align: middle;
+    resize: none;
+    font-size: 16px;
 }
 
 .input-label {

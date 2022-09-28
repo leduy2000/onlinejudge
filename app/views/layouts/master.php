@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/onlinejudge/public/asset/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/onlinejudge/public/asset/js/user.js"></script>
+    <script src="/onlinejudge/public/asset/js/utils.js"></script>
     <script src="/onlinejudge/public/asset/js/problem.js"></script>
     <script src="/onlinejudge/public/asset/js/contest.js"></script>
     <script src="/onlinejudge/public/asset/js/ace/ace.js"></script>

@@ -1,5 +1,19 @@
 var Problem = new function __Problem() {
 
+    this.get_difficulty = function(val) {
+        if (val == 1) {
+            return 'Easy';
+        } else if (val == 2) {
+            return 'Medium';
+        } else if (val == 3) {
+            return 'Hard'; 
+        } else if (val == 4) {
+            return 'Advanced';
+        } else {
+            return 'Expert';
+        }
+    }
+
 }
 
 Problem.display = new function __ProblemDisplay() {
@@ -28,8 +42,59 @@ Problem.display = new function __ProblemDisplay() {
     }
 }
 
+Problem.board = new function __ProblemBoard() {
+
+    this.practice = function(problems) {
+        var html = ``;
+        for (var problem of problems) {
+            html += `<div class="ui-card url">
+                        <div class="flex1">
+                            <div>
+                                <div class="problem-title psB">${problem.name}</div>
+                                <div><span id="difficulty" style="color: #d11534">${Problem.get_difficulty(problem.difficulty)}</span></div>
+                            </div>
+                            <button class="btn-normal ui-btn btn-white msL">Solve Challenge</button>
+                        </div>
+                    </div>`;
+        }
+        $('#js-problems').html(html);
+    }
+}
+
 Problem.form = new function __ProblemForm() {
-    this.submitCode = function () {
+
+    this.create = function() {
+        var name = $('#name').val();
+        var difficulty = $('#difficulty').val();
+        var time_limit = $('#time-limit').val();
+        var memory_limit = $('#memory-limit').val();
+        var statement = $('#statement').val();
+        var sample_input = $('#sample-input').val();
+        var sample_output = $('#sample-output').val();
+        console.log(name, difficulty, time_limit, memory_limit, statement, sample_input, sample_output);
+        $.ajax({
+            url: "/onlinejudge/problemset/user_create",
+            method: "POST",
+            data: {
+                name: name,
+                difficulty: difficulty,
+                time_limit: time_limit,
+                memory_limit: memory_limit,
+                statement: statement,
+                sample_input: sample_input,
+                sample_output: sample_output
+            },
+            success: function (response) {
+                console.log(response)
+                // if (response == true) {
+                // } else {
+                //     alert("Something went wrong!");
+                // }
+            }
+        })
+    }
+
+    this.submit_code = function () {
         var language = $('#languages').val();
         var code = Problem.editor.getValue();
         $.ajax({
