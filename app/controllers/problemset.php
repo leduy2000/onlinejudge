@@ -14,6 +14,17 @@ class Problemset extends Controller {
         $this->view("master", ["page" => "problemset/problemset", "problems" => $problems]);
     }
 
+    public function problem($id) {
+        session_start();
+        $problem = $this->problem_model->byId($id);
+        if ($problem) {
+            $this->view("master", ["page" => "problemset/problem", "problem" => $problem]);
+        } else {
+            $problems = $this->problem_model->all();
+            $this->view("master", ["page" => "problemset/problemset", "problems" => $problems]);
+        }
+    }
+
     public function create() {
         session_start();
         $this->view("master", ["page" => "problemset/create"]);

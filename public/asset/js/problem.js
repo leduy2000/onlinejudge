@@ -47,13 +47,13 @@ Problem.board = new function __ProblemBoard() {
     this.practice = function(problems) {
         var html = ``;
         for (var problem of problems) {
-            html += `<div class="ui-card url">
+            html += `<div class="ui-card">
                         <div class="flex1">
                             <div>
                                 <div class="problem-title psB">${problem.name}</div>
                                 <div><span id="difficulty" style="color: #d11534">${Problem.get_difficulty(problem.difficulty)}</span></div>
                             </div>
-                            <button class="btn-normal ui-btn btn-white msL">Solve Challenge</button>
+                            <button class="btn-normal ui-btn btn-white msL" onclick="window.location.href='/onlinejudge/problemset/problem/${problem.id}'">Solve Challenge</button>
                         </div>
                     </div>`;
         }

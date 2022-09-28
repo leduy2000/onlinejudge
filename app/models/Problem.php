@@ -25,4 +25,15 @@ class Problem extends DB {
         //return json_encode($rows);
     }
 
+    public function byId($id) {
+        $sql = "select * from Problems where id = $id";
+        $rows = $this->execute($sql);
+        // die(json_encode($rows));
+        $data = $this->fetch($rows);
+        if (isset($data[0])) {
+            return json_encode($data[0]);
+        }
+        return null;
+    }
+
 }
