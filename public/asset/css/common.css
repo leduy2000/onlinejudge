@@ -1,4 +1,4 @@
-* {
+*:not(.ace_line) {
     margin: 0;
     box-sizing: border-box;
 }
@@ -124,13 +124,14 @@ button {
 
 .content {
     background-color: #f3f7f7;
-    min-height: 1200px;
+    min-height: calc(100vh - 60px);;
 }
 
 .ui-card {
     box-shadow: 0 6px 16px 0 rgb(0 0 0 / 10%);
     background-color: #ffffff;
     padding: 20px 30px;
+    font-family: sans-serif;
 }
 
 .url {
@@ -180,4 +181,14 @@ p {
     font-weight: 500;
     margin: 5px 0;
     font-size: 40px;
+    font-family: sans-serif;
+}
+
+.editor-wrap {
+    width: 800px;
+    height: 100px;
+}
+
+.table-wrap {
+    font-family: sans-serif;
 }

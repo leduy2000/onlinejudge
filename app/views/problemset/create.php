@@ -22,19 +22,57 @@
         <div class="input-label">Memory Limit</div>
         <input id="memory-limit" class="normal-input" type="text">
     </div>
-    <div class="input-row">
+    <div class="input-row flex" style="margin-bottom:60px">
         <div class="input-label">Statement</div>
-        <textarea id="statement" class="problem-input-statement"></textarea>
+        <!-- <textarea id="statement" class="problem-input-statement"></textarea> -->
+        <div class="editor-wrap">
+            <div id="statement"></div>
+        </div>
     </div>
-    <div class="input-row">
+    <div class="input-row flex" style="margin-bottom:60px">
         <div class="input-label">Sample Input</div>
-        <textarea id="sample-input" class="problem-input-sample-io"></textarea>
+        <div class="editor-wrap">
+            <div id="sample-input"></div>
+        </div>
+        <!-- <textarea id="sample-input" class="problem-input-sample-io"></textarea> -->
     </div>
-    <div class="input-row">
+    <div class="input-row flex" style="margin-bottom:60px">
         <div class="input-label">Sample Output</div>
-        <textarea id="sample-output" class="problem-input-sample-io"></textarea>
+        <div class="editor-wrap">
+            <div id="sample-output"></div>
+        </div>
+
+        <!-- <textarea id="sample-output" class="problem-input-sample-io"></textarea> -->
     </div>
     <button class="btn-green ui-btn btn-normal url" onclick="Problem.form.create()">Save Changes</button>
 </div>
 <script>
+    var toolbar_options = [
+        ['bold', 'italic', {
+            'list': 'ordered'
+        }, {
+            'list': 'bullet'
+        }, 'image', 'link', 'code-block'],
+    ];
+
+    var statement_input = new Quill('#statement', {
+        modules: {
+            toolbar: toolbar_options,
+        },
+        theme: 'snow'
+    });
+
+    var sample_input_input = new Quill('#sample-input', {
+        modules: {
+            toolbar: toolbar_options,
+        },
+        theme: 'snow'
+    });
+
+    var sample_output_input = new Quill('#sample-output', {
+        modules: {
+            toolbar: toolbar_options,
+        },
+        theme: 'snow'
+    });
 </script>

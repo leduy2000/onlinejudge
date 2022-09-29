@@ -1,6 +1,6 @@
 <div class="content">
     <div class="container">
-        <div class="problem-label plT plB">Problems</div>
+        <div class="problem-title plT plB">Problems</div>
         <div id="js-problems"></div>
         <!-- <div class="ui-card url">
             <div class="flex1">

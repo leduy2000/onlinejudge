@@ -22,7 +22,7 @@ Problem.display = new function __ProblemDisplay() {
         Problem.editor.setTheme("ace/theme/monokai");
         Problem.editor.session.setMode("ace/mode/c_cpp");
         Problem.editor.setOptions({
-            fontSize: "11pt",
+            fontSize: "12pt",
             enableBasicAutocompletion: true,
             enableLiveAutocompletion: true
         });
@@ -68,10 +68,9 @@ Problem.form = new function __ProblemForm() {
         var difficulty = $('#difficulty').val();
         var time_limit = $('#time-limit').val();
         var memory_limit = $('#memory-limit').val();
-        var statement = $('#statement').val();
-        var sample_input = $('#sample-input').val();
-        var sample_output = $('#sample-output').val();
-        console.log(name, difficulty, time_limit, memory_limit, statement, sample_input, sample_output);
+        var statement = statement_input.root.innerHTML;
+        var sample_input = sample_input_input.root.innerHTML;
+        var sample_output = sample_output_input.root.innerHTML;
         $.ajax({
             url: "/onlinejudge/problemset/user_create",
             method: "POST",
