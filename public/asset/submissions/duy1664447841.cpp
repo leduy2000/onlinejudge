@@ -2,7 +2,7 @@
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 
-//#define int long long
+#define int long long
 
 using namespace std;
 using namespace __gnu_pbds;
@@ -13,7 +13,11 @@ typedef tree<int, null_type, less_equal<int>, rb_tree_tag, tree_order_statistics
 void terase(ordered_multiset &s, int v) {int rank = s.order_of_key(v); auto it = s.find_by_order(rank); s.erase(it);}
 
 void solve() {
-    cout << "Hello";
+    vector<int> a(5);
+    for (int &x : a)
+        cin >> x;
+    for (int x : a)
+        cout << x << ' ';
 }
 
 int32_t main() {

@@ -3,6 +3,17 @@
     box-sizing: border-box;
 }
 
+select, textarea, input {
+    border: 1px solid #C2C7D0;
+    border-radius: 5px;
+    color: #39424e;
+    display: inline-block;
+    font-size: 16px;
+    padding: 7px 10px;
+    font-weight: 500;
+    height: 40px;
+}
+
 button {
     cursor: pointer;
 }
@@ -78,6 +89,10 @@ button {
 
 .mlB {
     margin-bottom: 20px;
+}
+
+.msB {
+    margin-bottom: 10px;
 }
 
 .btn-ui {

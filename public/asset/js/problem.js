@@ -17,15 +17,16 @@ var Problem = new function __Problem() {
 }
 
 Problem.display = new function __ProblemDisplay() {
-    this.init = function () {
+    this.init = function (problem) {
         Problem.editor = ace.edit("js-editor");
         Problem.editor.setTheme("ace/theme/monokai");
         Problem.editor.session.setMode("ace/mode/c_cpp");
         Problem.editor.setOptions({
             fontSize: "12pt",
             enableBasicAutocompletion: true,
-            enableLiveAutocompletion: true
+            enableLiveAutocompletion: true,
         });
+        Problem.editor.setShowPrintMargin(false);
 
         $('#languages').on('change', function () {
             var language = $('#languages').val();
@@ -39,6 +40,26 @@ Problem.display = new function __ProblemDisplay() {
                 Problem.editor.session.setMode("ace/mode/javascript");
             }
         });
+
+        var html = `
+                    <div class="problem-tab-list-content">
+                        <div class="msB" style="font-weight: bold">Statement</div>
+                        <div class="mlB">
+                            ${problem.statement}
+                        </div>
+                        <div class="msB" style="font-weight: bold">Sample Input</div>
+                        <div class="problem-sample-io mlB">
+                            ${problem.sample_input}
+                        </div>
+                        <div class="msB" style="font-weight: bold">Sample Output</div>
+                        <div class="problem-sample-io mlB">
+                            ${problem.sample_output}
+                        </div>
+                    </div>
+                    `;
+        $('#js-problem').html(html);
+        console.log(problem)
+
     }
 }
 

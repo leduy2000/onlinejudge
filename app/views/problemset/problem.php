@@ -3,7 +3,6 @@
         <div class="problem-tab-list">
             <div class="problem-tab-item problem-active url">Problem</div>
             <div class="problem-tab-item url">Submissions</div>
-            <div class="problem-tab-item url">Leaderboard</div>
             <div class="problem-tab-item url">Discussions</div>
         </div>
         <div id="js-problem"></div>
@@ -36,5 +35,6 @@
 </div>
 
 <script>
-    Problem.display.init();
+    var problem = JSON.parse('<?php echo $data['problem'] ?>');
+    Problem.display.init(problem);
 </script>
