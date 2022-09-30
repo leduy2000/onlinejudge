@@ -22,7 +22,8 @@ class Home extends Controller {
             $data['code'] = $code;
             $data['language'] = $language;
             $data['username'] = $_SESSION['username'];
-            Judge::process_submission($data);
+            $judge = new Judge($data);
+            $judge->process_submission();
         }
         die(false);
     }

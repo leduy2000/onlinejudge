@@ -17,6 +17,7 @@ var Problem = new function __Problem() {
 }
 
 Problem.display = new function __ProblemDisplay() {
+
     this.init = function (problem) {
         Problem.editor = ace.edit("js-editor");
         Problem.editor.setTheme("ace/theme/monokai");
@@ -36,8 +37,6 @@ Problem.display = new function __ProblemDisplay() {
                 Problem.editor.session.setMode("ace/mode/php");
             } else if (language == 'python') {
                 Problem.editor.session.setMode("ace/mode/python");
-            } else if (language == 'node') {
-                Problem.editor.session.setMode("ace/mode/javascript");
             }
         });
 
