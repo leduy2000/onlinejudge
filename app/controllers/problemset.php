@@ -56,4 +56,25 @@ class Problemset extends Controller {
         }
         die(false);
     }
+
+    public function user_submit() {
+        session_start();
+        if ($_SESSION['username']) {
+            $language = $_POST['language'];
+            $code = $_POST['code'];
+            $problem_id = $_POST['problem_id'];
+            $time_limit = $_POST['time_limit'];
+            $memory_limit = $_POST['memory_limit'];
+            $data = [];
+            $data['code'] = $code;
+            $data['language'] = $language;
+            $data['username'] = $_SESSION['username'];
+            $data['problem_id'] = $problem_id;
+            $data['time_limit'] = $time_limit;
+            $data['memory_limit'] = $memory_limit;
+            $judge = new Judge($data);
+            $judge->process_submission();
+        }
+        die(false);
+    }
 }

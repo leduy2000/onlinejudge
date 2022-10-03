@@ -8,7 +8,6 @@ Contest.form = new function __ContestForm() {
         var name = $('#name').val();
         var start_time = Utils.datetime_to_int($('#start-time').val());
         var end_time = Utils.datetime_to_int($('#end-time').val());
-        console.log(name, start_time, end_time);
         $.ajax({
             url: "/onlinejudge/contests/user_create",
             method: "POST",

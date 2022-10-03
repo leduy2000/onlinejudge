@@ -57,8 +57,6 @@ Problem.display = new function __ProblemDisplay() {
                     </div>
                     `;
         $('#js-problem').html(html);
-        console.log(problem)
-
     }
 }
 
@@ -116,12 +114,16 @@ Problem.form = new function __ProblemForm() {
     this.submit_code = function () {
         var language = $('#languages').val();
         var code = Problem.editor.getValue();
+        console.log(problem);
         $.ajax({
-            url: "/onlinejudge/home/user_submit",
+            url: "/onlinejudge/problemset/user_submit",
             method: "POST",
             data: {
                 language: language,
-                code: code
+                code: code,
+                problem_id: problem.id,
+                time_limit: problem.time_limit,
+                memory_limit: problem.memory_limit
             },
             success: function (response) {
                 console.log(response);
