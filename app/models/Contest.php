@@ -19,4 +19,14 @@ class Contest extends DB {
         $rows = $this->execute($sql);
         return json_encode($this->fetch($rows));
     }
+
+    public function byId($id) {
+        $sql = "select * from Contests where id = $id";
+        $rows = $this->execute($sql);
+        $data = $this->fetch($rows);
+        if (isset($data[0])) {
+            return json_encode($data[0]);
+        }
+        return null;
+    }
 }

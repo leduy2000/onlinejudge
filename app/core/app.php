@@ -8,6 +8,7 @@ class App {
 
     public function __construct() {
         $arr = $this->get_url();
+        
 
         // controller
         if (isset($arr[0])) {
@@ -27,7 +28,9 @@ class App {
         }
 
         // params
+        
         $this->params = $arr ? array_values($arr) : [];
+        // die(json_encode($this->params));
         call_user_func_array([$this->controller, $this->method], $this->params);
     }
 

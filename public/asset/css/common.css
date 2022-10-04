@@ -1,4 +1,4 @@
-*:not(.ace_line) {
+* {
     margin: 0;
     box-sizing: border-box;
 }

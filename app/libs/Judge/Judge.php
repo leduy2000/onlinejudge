@@ -54,10 +54,6 @@ class Judge {
             $mem = shell_exec(__DIR__ . "/getmemusage.bat $file_name.exe");
             $this->data['memusage'] = $mem;
             $this->data['execution_time'] = $time;
-            $status = proc_get_status($process);
-            if (!$status['running']) {
-                proc_close($process);
-            }
             if ($time_limit !== false and $time > $time_limit) {
                 proc_terminate($process, 9);
                 $this->data['verdict'] = "Time Limit Exeeded";
@@ -67,6 +63,10 @@ class Judge {
                 proc_terminate($process, 9);
                 $this->data['verdict'] = "Memory Limit Exeeded";
                 break;
+            }
+            $status = proc_get_status($process);
+            if (!$status['running']) {
+                proc_close($process);
             }
         }
 

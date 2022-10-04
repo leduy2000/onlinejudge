@@ -12,14 +12,6 @@
         <p class="span">Problem Name</p>
         <p class="span center">Problem Owner</p>
     </div>
-    <!-- <div class="administration-tbl-row url" style="background-color:#f8f9fa">
-        <p class="span slug">aaa</p>
-        <p class="span center">admin</p>
-    </div>
-    <div class="administration-tbl-row url" style="background-color:#fff">
-        <p class="span slug">c1</p>
-        <p class="span center">admin</p>
-    </div> -->
     <div id="js-problems"></div>
 </div>
 

@@ -123,10 +123,6 @@ Problem.form = new function __ProblemForm() {
             },
             success: function (response) {
                 console.log(response)
-                // if (response == true) {
-                // } else {
-                //     alert("Something went wrong!");
-                // }
             }
         })
     }
@@ -147,11 +143,6 @@ Problem.form = new function __ProblemForm() {
             },
             success: function (response) {
                 console.log(response);
-                // if (response == true) {
-                //     $('.problem-output').html('xxx');
-                // } else {
-                //     alert("Something went wrong!");
-                // }
             }
         })
     }

@@ -28,6 +28,7 @@ class Problem extends DB {
         $sql = "select * from Problems where id = $id";
         $rows = $this->execute($sql);
         $data = $this->fetch($rows);
+        
         if (isset($data[0])) {
             return json_encode($data[0]);
         }

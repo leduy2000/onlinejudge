@@ -1,8 +1,8 @@
 <div class="container">
     <div class="page-label">Administration</div>
     <div class="administration-tab-list">
-        <div class="administration-tab-item administration-active">Manage Contests</div>
-        <div class="administration-tab-item url" onclick="window.location.href='/onlinejudge/administration/problems'">Manage Problems</div>
+        <div class="administration-tab-item administration-active">Details</div>
+        <div class="administration-tab-item url" onclick="window.location.href='/onlinejudge/administration/problems'">Problems</div>
     </div>
     <div class="administration-clearfix flex1 mlB">
         <div>Contests you can edit are below. For more info, visit our FAQ or join our discussion forum.</div>
@@ -18,6 +18,6 @@
 </div>
 
 <script>
-    var contests = JSON.parse('<?php echo $data['contests'] ?>');
-    Contest.board.admin(contests);
+    var contest = JSON.parse('<?php echo $data['contest'] ?>');
+    Contest.display.edit(contest)
 </script>

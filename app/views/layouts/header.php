@@ -25,6 +25,6 @@
         $('#js-btn').html(`<a href="">${username}</a>`);
     } else {
         $('#js-btn').html(`<button class="btn-ui btn-normal mT5"
-             onclick="window.location.href='login';">Log In</button>`);
+             onclick="window.location.href='/onlinejudge/login';">Log In</button>`);
     }
 </script>
