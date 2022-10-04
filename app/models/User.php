@@ -17,9 +17,13 @@ class User extends DB {
 
     public function find_by_email($data = []) {
         $email = $data['email'];
-        $sql = "select * from Users where email = $email";
-        $res = $this->execute($sql);
-        return $res->fetch_assoc();
+        $sql = "select * from Users where email = '$email'";
+        $rows = $this->execute($sql);
+        $data = $this->fetch($rows);
+        if (isset($data[0])) {
+            return $data[0];
+        }
+        return null;
     }
 
     // public function get_users() {

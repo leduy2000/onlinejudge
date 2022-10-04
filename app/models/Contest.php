@@ -17,7 +17,7 @@ class Contest extends DB {
     public function all() {
         $sql = "select * from Contests";
         $rows = $this->execute($sql);
-        return json_encode($this->fetch($rows));
+        return $this->fetch($rows);
     }
 
     public function byId($id) {
@@ -25,7 +25,7 @@ class Contest extends DB {
         $rows = $this->execute($sql);
         $data = $this->fetch($rows);
         if (isset($data[0])) {
-            return json_encode($data[0]);
+            return $data[0];
         }
         return null;
     }

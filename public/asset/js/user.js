@@ -47,6 +47,7 @@ User.form = new function __UserForm() {
                 password: password,
             },
             success: function (response) {
+                console.log(response);
                 if (response == true) {
                     window.location.replace("/onlinejudge/home");
                 } else {

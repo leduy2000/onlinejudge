@@ -21,7 +21,7 @@ class Problem extends DB {
     public function all() {
         $sql = "select * from Problems";
         $rows = $this->execute($sql);
-        return json_encode($this->fetch($rows));
+        return $this->fetch($rows);
     }
 
     public function byId($id) {
@@ -30,7 +30,7 @@ class Problem extends DB {
         $data = $this->fetch($rows);
         
         if (isset($data[0])) {
-            return json_encode($data[0]);
+            return $data[0];
         }
         return null;
     }

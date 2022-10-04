@@ -12,27 +12,29 @@ class Administration extends Controller {
 
     public function index() {
         session_start();
-        $contests = $this->contest_model->all();
+        $contests = json_encode($this->contest_model->all());
         $this->view("master", ["page" => "administration/contests", "contests" => $contests]);
     }
 
-    public function contests($arg1 = null, $arg2 = null) {  
+    public function contests($arg1 = null, $arg2 = null, $arg3 = null) {  
         if ($arg1 != 'edit') {
             $this->index();
         } else {
             session_start();
-            $contest = $this->contest_model->byId($arg2);
+            $contest = json_encode($this->contest_model->byId($arg3));
             if (!$contest) {
                 $this->index();
-            } else {
-                $this->view("master", ["page" => "administration/edit.contest", "contest" => $contest]);
+            } else if ($arg2 == 'details') {
+                $this->view("master", ["page" => "administration/edit.contest.details", "contest" => $contest]);
+            } else if ($arg2 == 'problems') {
+                $this->view("master", ["page" => "administration/edit.contest.problems", "contest" => $contest]);
             }
         }
     }
 
     public function problems() {
         session_start();
-        $problems = $this->problem_model->all();
+        $problems = json_encode($this->problem_model->all());
         $this->view("master", ["page" => "administration/problems", "problems" => $problems]);
     }
 
