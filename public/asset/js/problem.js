@@ -1,16 +1,24 @@
 var Problem = new function __Problem() {
 
-    this.get_difficulty = function(val) {
+    this.get_difficulty = function (val) {
         if (val == 1) {
             return 'Easy';
         } else if (val == 2) {
             return 'Medium';
         } else if (val == 3) {
-            return 'Hard'; 
+            return 'Hard';
         } else if (val == 4) {
             return 'Advanced';
         } else {
             return 'Expert';
+        }
+    }
+
+    this.get_admin_tbl_row_color = function(id) {
+        if (id % 2 == 0) {
+            return '#f8f9fa';
+        } else {
+            return '#ffffff'
         }
     }
 
@@ -62,7 +70,7 @@ Problem.display = new function __ProblemDisplay() {
 
 Problem.board = new function __ProblemBoard() {
 
-    this.practice = function(problems) {
+    this.practice = function (problems) {
         var html = ``;
         for (var problem of problems) {
             html += `<div class="ui-card">
@@ -77,11 +85,23 @@ Problem.board = new function __ProblemBoard() {
         }
         $('#js-problems').html(html);
     }
+
+    this.admin = function (problems) {
+        var html = ``;
+        for (var i = 0; i < problems.length; i++) {
+            var color = Problem.get_admin_tbl_row_color(i);
+            html += `<div class="administration-tbl-row" style="background-color:${color}">
+                        <p class="span txt-link url">${problems[i].name}</p>
+                        <p class="span center">${problems[i].user_id}</p>
+                    </div>`;
+        }
+        $('#js-problems').html(html);
+    }
 }
 
 Problem.form = new function __ProblemForm() {
 
-    this.create = function() {
+    this.create = function () {
         var name = $('#name').val();
         var difficulty = $('#difficulty').val();
         var time_limit = $('#time-limit').val();

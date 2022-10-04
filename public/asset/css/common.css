@@ -168,6 +168,7 @@ p {
 }
 
 .input-row {
+    font-family: sans-serif;
     margin-bottom: 20px;
     margin-top: 20px;
     align-items: center;   
@@ -195,7 +196,7 @@ p {
 .page-label {
     font-weight: 500;
     margin: 5px 0;
-    font-size: 40px;
+    font-size: 30px;
     font-family: sans-serif;
 }
 

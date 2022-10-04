@@ -46,12 +46,12 @@ class Judge {
         $start = microtime(true);
         $process = proc_open(__DIR__ . "/$file_name.exe", $descriptorspec, $pipes);
 
-        $this->data['memusage'] = shell_exec(__DIR__."/getmemusage.bat $file_name.exe");
+        $this->data['memusage'] = shell_exec(__DIR__ . "/getmemusage.bat $file_name.exe");
         $this->data['execution_time'] = self::exec_time($start, microtime(true));
 
         while (is_resource($process)) {
             $time = self::exec_time($start, microtime(true));
-            $mem = shell_exec(__DIR__."/getmemusage.bat $file_name.exe");
+            $mem = shell_exec(__DIR__ . "/getmemusage.bat $file_name.exe");
             $this->data['memusage'] = $mem;
             $this->data['execution_time'] = $time;
             $status = proc_get_status($process);
@@ -71,15 +71,15 @@ class Judge {
         }
 
         shell_exec("taskkill /im $file_name.exe /f");
-        shell_exec("del ".__DIR__."\\$file_name.$language /f");
-        shell_exec("del ".__DIR__."\\$file_name.exe /f");
+        shell_exec("del " . __DIR__ . "\\$file_name.$language /f");
+        shell_exec("del " . __DIR__ . "\\$file_name.exe /f");
 
         if (isset($this->data['verdict'])) {
             return;
         }
 
-        $participant_output_file = fopen(__DIR__."/participant.output.out", "r");
-        $jury_output_file = fopen(__DIR__."/jury.output.out", "r");
+        $participant_output_file = fopen(__DIR__ . "/participant.output.out", "r");
+        $jury_output_file = fopen(__DIR__ . "/jury.output.out", "r");
 
         $participant_output = [];
         $jury_output = [];
@@ -88,7 +88,6 @@ class Judge {
             $line = trim(fgets($participant_output_file));
             if ($line !== '')
                 $participant_output[] = $line;
-            
         }
         fclose($participant_output_file);
 
@@ -105,7 +104,7 @@ class Judge {
             $this->data['verdict'] = "Wrong Answer";
             return;
         }
-        
+
         for ($i = 0; $i < count($participant_output); $i++) {
             if ($participant_output[$i] != $jury_output[$i]) {
                 $this->data['verdict'] = "Wrong Answer";

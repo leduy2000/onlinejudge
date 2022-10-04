@@ -14,4 +14,9 @@ class Contest extends DB {
         return $this->execute($sql);
     }
 
+    public function all() {
+        $sql = "select * from Contests";
+        $rows = $this->execute($sql);
+        return json_encode($this->fetch($rows));
+    }
 }

@@ -12,7 +12,8 @@ class Administration extends Controller {
 
     public function index() {
         session_start();
-        $this->view("master", ["page" => "administration/contests"]);
+        $contests = $this->contest_model->all();
+        $this->view("master", ["page" => "administration/contests", "contests" => $contests]);
     }
 
     public function contests() {
@@ -21,7 +22,8 @@ class Administration extends Controller {
 
     public function problems() {
         session_start();
-        $this->view("master", ["page" => "administration/problems"]);
+        $problems = $this->problem_model->all();
+        $this->view("master", ["page" => "administration/problems", "problems" => $problems]);
     }
 
 }

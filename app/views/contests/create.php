@@ -14,5 +14,7 @@
     </div>
     <button class="btn-green ui-btn btn-normal url" onclick="Contest.form.create()">Get Started</button>
 </div>
+
 <script>
+
 </script>

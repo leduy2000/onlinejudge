@@ -30,18 +30,4 @@
 </div>
 
 <script>
-    var username = '<?php
-                    if (isset($_SESSION['username'])) {
-                        echo $_SESSION['username'];
-                    } else {
-                        echo '';
-                    }
-                    ?>';
-    if (username) {
-        $('#js-btn').html(`<a onclick="">${username}</a>`);
-    } else {
-        $('#js-btn').html(`<button class="btn-ui btn-normal mT5"
-             onclick="window.location.href='login';">Log In</button>`);
-    }
-    Problem.display.init();
 </script>

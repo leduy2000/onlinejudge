@@ -31,3 +31,25 @@
     align-items: center;
     height: 40px;
 }
+
+.administration-tbl-header {
+    font-family: sans-serif;
+    display: flex;
+    padding: 12px;
+    background-color: #ffffff;
+    font-size: 14px;
+    border: 1px solid #c2c7d0;
+    font-weight: 550;
+}
+
+.administration-tbl-row {
+    font-family: sans-serif;
+    align-items: center;
+    position: relative;
+    display: flex;
+    padding: 20px 10px;
+    font-size: 14px;
+    border: 1px solid #c2c7d0;
+    border-top: 0px;
+    height: 29px;
+}
