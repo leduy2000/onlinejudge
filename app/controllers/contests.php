@@ -36,4 +36,22 @@ class Contests extends Controller {
         }
         die(false);
     }
+
+    public function user_edit_details() {
+        session_start();
+        if ($_SESSION['username']) {
+            $id = $_POST['id'];
+            $name = $_POST['name'];
+            $start_time = $_POST['start_time'];
+            $end_time = $_POST['end_time'];
+            $data = [];
+            $data['id'] = $id;
+            $data['name'] = $name;
+            $data['start_time'] = $start_time;
+            $data['end_time'] = $end_time;
+            $this->contest_model->edit_details($data);
+            die(true);
+        }
+        die(false);
+    }
 }

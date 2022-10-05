@@ -130,7 +130,6 @@ Problem.form = new function __ProblemForm() {
     this.submit_code = function () {
         var language = $('#languages').val();
         var code = Problem.editor.getValue();
-        console.log(problem);
         $.ajax({
             url: "/onlinejudge/problemset/user_submit",
             method: "POST",

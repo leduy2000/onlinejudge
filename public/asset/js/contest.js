@@ -18,8 +18,24 @@ Contest.display = new function __ContestDisplay() {
                         <div class="administration-tab-item administration-active">Details</div>
                         <div class="administration-tab-item url" onclick="window.location.href='/onlinejudge/administration/contests/edit/problems/${contest.id}'">Problems</div>
                     </div>
+                    <div class="input-row">
+                        <div class="input-label">Contest Name</div>
+                        <input id="name" class="normal-input" type="text" value='${contest.name}'>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-label">Start Time</div>
+                        <input id="start-time" class="normal-input" type="datetime-local">
+                    </div>
+                    <div class="input-row">
+                        <div class="input-label">End Time</div>
+                        <input id="end-time" class="normal-input" type="datetime-local">
+                    </div>
+                    <button id="save-btn" class="btn-green ui-btn btn-normal url">Save Changes</button>
                 </div>`;
-        $('#js-contest-details').html(html); 
+        $('#js-contest-details').html(html);
+        $('#save-btn').click(function() {
+            Contest.form.edit_details(contest);
+        });
     }
 
     this.edit_problems = function(contest) {
@@ -69,6 +85,26 @@ Contest.form = new function __ContestForm() {
             },
             success: function (response) {
                 console.log(response);
+            }
+        })
+    }
+
+    this.edit_details = function (contest) {
+        var name = $('#name').val();
+        var start_time = Utils.datetime_to_int($('#start-time').val());
+        var end_time = Utils.datetime_to_int($('#end-time').val());
+        $.ajax({
+            url: "/onlinejudge/contests/user_edit_details",
+            method: "POST",
+            data: {
+                id: contest.id,
+                name: name,
+                start_time: start_time,
+                end_time: end_time
+            },
+            success: function (response) {
+                console.log(response);
+                location.reload();
             }
         })
     }

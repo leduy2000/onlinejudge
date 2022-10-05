@@ -14,6 +14,18 @@ class Contest extends DB {
         return $this->execute($sql);
     }
 
+    public function edit_details($data = []) {
+        $id = $data['id'];
+        $name = $data['name'];
+        $start_time = $data['start_time'];
+        $end_time = $data['end_time'];
+        $last_update = time();
+        $sql = "update Contests 
+                set name = '$name', start_time = '$start_time', end_time = '$end_time', last_update = '$last_update'
+                where id = '$id';";
+        return $this->execute($sql);
+    }
+
     public function all() {
         $sql = "select * from Contests";
         $rows = $this->execute($sql);
