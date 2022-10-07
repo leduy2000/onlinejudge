@@ -124,6 +124,13 @@ button {
     border: 1px solid #1ba94c;
 }
 
+.btn-grey {
+    background: #F0F0F4;
+    border: 1px solid #C0C7D0;
+    color: #39424e;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 20%);
+}
+
 .flex1 {
     display: flex; 
     justify-content: space-between; 
@@ -211,4 +218,8 @@ p {
 
 .height-100 {
     height: 100%;
+}
+
+.hidden {
+    display: none !important;
 }

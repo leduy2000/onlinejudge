@@ -70,6 +70,11 @@ Problem.display = new function __ProblemDisplay() {
 
 Problem.board = new function __ProblemBoard() {
 
+    this.set_name = function(name) {
+        $('#name').val(name);
+        $('#pop-up-result').html('');
+    }
+
     this.practice = function (problems) {
         var html = ``;
         for (var problem of problems) {
@@ -97,6 +102,26 @@ Problem.board = new function __ProblemBoard() {
         }
         $('#js-problems').html(html);
     }
+
+    this.by_name = function(name) {
+        $.ajax({
+            url: "/onlinejudge/problemset/by_name",
+            method: "POST",
+            data: {
+                name: name,
+            },
+            success: function (response) {
+                var problems = JSON.parse(response);
+                var html = ``;
+                for (var problem of problems) {
+                    html += `<div class="pop-up-result-row url" onclick="Problem.board.set_name('${problem.name}')">${problem.name}</div>`;
+                }
+                $('#pop-up-result').html(html);
+            }
+        })
+    }
+
+    
 }
 
 Problem.form = new function __ProblemForm() {

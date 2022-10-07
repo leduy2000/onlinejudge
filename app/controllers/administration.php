@@ -38,4 +38,19 @@ class Administration extends Controller {
         $this->view("master", ["page" => "administration/problems", "problems" => $problems]);
     }
 
+    public function add_problem_to_contest() {
+        session_start();
+        if ($_SESSION['username']) {
+            $id = $_POST['id'];
+            $problem_name = $_POST['problem_name'];
+            $problem_score = $_POST['problem_score'];
+            $data = [];
+            $data['id'] = $id;
+            $data['problem_name'] = $problem_name;
+            $data['problem_score'] = $problem_score;
+            // die(json_encode($this->problem_model->by_name($name)));
+        }
+        die(false);
+    }
+
 }

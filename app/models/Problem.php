@@ -35,4 +35,10 @@ class Problem extends DB {
         return null;
     }
 
+    public function by_name($name) {
+        $sql = "select * from Problems where name like '%$name%'";
+        $rows = $this->execute($sql);
+        return $this->fetch($rows);
+    }
+
 }

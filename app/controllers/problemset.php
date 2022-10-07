@@ -77,4 +77,13 @@ class Problemset extends Controller {
         }
         die(false);
     }
+
+    public function by_name() {
+        session_start();
+        if ($_SESSION['username']) {
+            $name = $_POST['name'];
+            die(json_encode($this->problem_model->by_name($name)));
+        }
+        die(false);
+    }
 }

@@ -32,6 +32,13 @@ class Contest extends DB {
         return $this->fetch($rows);
     }
 
+    public function add_problem($data = []) {
+        $id = $data['id'];
+        $problem_name = $data['problem_name'];
+        $problem_score = $data['problem_score'];
+        $sql = 
+    }
+
     public function byId($id) {
         $sql = "select * from Contests where id = $id";
         $rows = $this->execute($sql);

@@ -1,6 +1,6 @@
 var UI = new function __UI() {
 
-    this.showDropdown = function() {
+    this.showDropdown = function () {
         var html = `<div class="dropdown">
                         <div class="dropdown-content">
                             <p>Hello World!</p>
@@ -8,7 +8,7 @@ var UI = new function __UI() {
                             <p>Hello World!</p>
                         </div>
                     </div>`
-        
+
     }
 }
 
