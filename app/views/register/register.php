@@ -14,7 +14,7 @@
         <div class="modal-label mlT">Confirm Password</div>
         <input id="confirm-password" type="password" placeholder="Confirm Password" class="modal-input">
     </form>
-    <button id="register-btn" class="btn-ui modal-btn mlT">Log in</button>
+    <button id="register-btn" class="btn-ui btn-green modal-btn mlT width-full">Register</button>
 </div>
 
 <script>

@@ -14,6 +14,10 @@ select, textarea, input {
     height: 40px;
 }
 
+body {
+    overflow: scroll;
+}
+
 button {
     cursor: pointer;
 }
@@ -25,6 +29,7 @@ button {
 }
 
 .modal {
+    font-family: sans-serif;
     background-color: #fff;
     border: 1px solid #e3e3e3;
     border-radius: 16px;
@@ -146,7 +151,7 @@ button {
 
 .content {
     background-color: #f3f7f7;
-    min-height: calc(100vh - 60px);;
+    min-height: calc(100vh - 60px);
 }
 
 .ui-card {
@@ -203,7 +208,7 @@ p {
 .page-label {
     font-weight: 500;
     margin: 5px 0;
-    font-size: 30px;
+    font-size: 25px;
     font-family: sans-serif;
 }
 
@@ -222,4 +227,13 @@ p {
 
 .hidden {
     display: none !important;
+}
+
+.breadcrumb {
+    font-family: sans-serif;
+}
+
+.text-headline {
+    color: #738f93;
+    font-size: 13px;
 }

@@ -29,14 +29,25 @@ class Contest extends DB {
     public function all() {
         $sql = "select * from Contests";
         $rows = $this->execute($sql);
-        return $this->fetch($rows);
+        $contests = $this->fetch($rows);
+        foreach ($contests as &$contest) {
+            $user_id = $contest['user_id'];
+            $sql1 = "select * from Users where id = $user_id";
+            $rows = $this->execute($sql1);
+            $user = $this->fetch($rows)[0];
+            $contest['username'] = $user['username'];
+        }
+        return $contests;
     }
 
     public function add_problem($data = []) {
-        $id = $data['id'];
-        $problem_name = $data['problem_name'];
-        $problem_score = $data['problem_score'];
-        $sql = 
+        $problem = $data['problem'];
+        $contest = $data['contest'];
+        $problem_id = $problem['id'];
+        $contest_id = $contest['id'];
+        $score = $data['score'];
+        $sql = "insert into ContestsProblems (problem_id, contest_id, score) values ('$problem_id', '$contest_id', '$score');";
+        return $this->execute($sql);
     }
 
     public function byId($id) {

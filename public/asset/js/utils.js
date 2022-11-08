@@ -5,6 +5,7 @@ var Utils = new function __Utils() {
     }
 
     this.int_to_datetime = function(int) {
-        return new Date(int * 1000).toISOString();
+        return new Date(int * 1000).toString().substring(0, 25);
     }
+
 }

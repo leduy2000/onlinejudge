@@ -8,7 +8,7 @@
         <div class="modal-label mlT">Password</div>
         <input type="password" placeholder="Enter Password" class="modal-input" id="password">
     </form>
-    <button onclick="User.form.login()" class="btn-ui modal-btn mlT width-full">Log in</button>
+    <button onclick="User.form.login()" class="btn-ui btn-green modal-btn mlT width-full">Log in</button>
 </div>
 
 <script>

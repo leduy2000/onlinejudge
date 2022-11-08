@@ -40,6 +40,7 @@
     font-size: 14px;
     border: 1px solid #c2c7d0;
     font-weight: 550;
+    padding-right: 210px;
 }
 
 .administration-tbl-row {
@@ -52,4 +53,25 @@
     border: 1px solid #c2c7d0;
     border-top: 0px;
     height: 29px;
+    padding-right: 210px;
 }
+
+.administration-tbl-row .btn-edit {
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid #1ba94c;
+    width: 80px;
+    height: 25px;
+    color: #1ba94c;
+    right: 100px;
+}
+
+.administration-tbl-row .btn-remove {
+    position: absolute;
+    color: #d11534;
+    background-color: #ffffff;
+    border: 1px solid #d11534;
+    width: 80px;
+    height: 25px;
+    right: 10px;
+} 

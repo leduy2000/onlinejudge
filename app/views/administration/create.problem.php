@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="page-label">Create Problem</div>
+    <div class="page-label" style="margin-top: 50px">Create Problem</div>
     <div class="input-row">
         <div class="input-label">Problem Name</div>
         <input id="name" class="normal-input" type="text">
@@ -15,16 +15,15 @@
         </select>
     </div>
     <div class="input-row">
-        <div class="input-label">Time Limit</div>
+        <div class="input-label">Time Limit (s)</div>
         <input id="time-limit" class="normal-input" type="text">
     </div>
     <div class="input-row">
-        <div class="input-label">Memory Limit</div>
+        <div class="input-label">Memory Limit (KB)</div>
         <input id="memory-limit" class="normal-input" type="text">
     </div>
     <div class="input-row flex" style="margin-bottom:60px">
         <div class="input-label">Statement</div>
-        <!-- <textarea id="statement" class="problem-input-statement"></textarea> -->
         <div class="editor-wrap">
             <div id="statement"></div>
         </div>
@@ -34,15 +33,12 @@
         <div class="editor-wrap">
             <div id="sample-input"></div>
         </div>
-        <!-- <textarea id="sample-input" class="problem-input-sample-io"></textarea> -->
     </div>
     <div class="input-row flex" style="margin-bottom:60px">
         <div class="input-label">Sample Output</div>
         <div class="editor-wrap">
             <div id="sample-output"></div>
         </div>
-
-        <!-- <textarea id="sample-output" class="problem-input-sample-io"></textarea> -->
     </div>
     <button class="btn-green ui-btn btn-normal url" onclick="Problem.form.create()">Save Changes</button>
 </div>

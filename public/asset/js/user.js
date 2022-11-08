@@ -56,4 +56,16 @@ User.form = new function __UserForm() {
             }
         })
     }
+
+    this.logout = function() {
+        $.ajax({
+            url: "/onlinejudge/logout/",
+            method: "POST",
+            data: {
+            },
+            success: function (response) {
+                window.location.replace("/onlinejudge/login");
+            }
+        })
+    }
 }

@@ -1,6 +1,6 @@
 .header {
     overflow: hidden;
-    background-color: #39424e;
+    background-color: #1a3151;
     height: 55px;
     font-family: sans-serif;
 }
@@ -25,4 +25,12 @@
 
 .header a.active {
     color: #fff;
+}
+
+.header .logo {
+    margin-bottom: 8px;
+    height: 40px;
+    margin-right: 20px;
+    float: left;
+    width: 120px;
 }

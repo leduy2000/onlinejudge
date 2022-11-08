@@ -1,46 +1,20 @@
+<div class="breadcrumb">
+    <div class="container">
+        <div style="margin-top: 30px; margin-bottom: 30px">
+            <div class="page-label">Contests</div>
+        </div>
+    </div>
+</div>
 <div class="content">
     <div class="container">
         <div class="contest-title plT psB">Active Contests</div>
-        <div class="plT">
-            <div class="ui-card contest-item" data-url="contests/1/challenges">
-                <div class="flex1 align-center">
-                    <div class="contest-title url">Hello World Contest</div>
-                    <div class="flex align-center">
-                        <div class="contest-status msR">Jan 15 2027, 21:00 pm</div>
-                        <div class="txt-link url msR">View details</div>
-                        <div class="btn-white ui-btn url">Enter</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="plT">
-            <div class="ui-card contest-item" data-url="contests/1/challenges">
-                <div class="flex1 align-center">
-                    <div class="contest-title url">Hello World Contest</div>
-                    <div class="flex align-center">
-                        <div class="contest-status msR">Jan 15 2027, 21:00 pm</div>
-                        <div class="txt-link url msR">View details</div>
-                        <div class="btn-white ui-btn url">Enter</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="plT">
-            <div class="ui-card contest-item" data-url="contests/1/challenges">
-                <div class="flex1 align-center">
-                    <div class="contest-title url">Hello World Contest</div>
-                    <div class="flex align-center">
-                        <div class="contest-status msR">Jan 15 2027, 21:00 pm</div>
-                        <div class="txt-link url msR">View details</div>
-                        <div class="btn-white ui-btn url">Enter</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id="js-active-contests"> </div>
         <div class="contest-title plT">Archived Contests</div>
+        <div id="js-archived-contests"> </div>
     </div>
 </div>
 
 <script>
-    
+    var contests = JSON.parse('<?php echo $data['contests'] ?>');
+    Contest.board.contests(contests);
 </script>

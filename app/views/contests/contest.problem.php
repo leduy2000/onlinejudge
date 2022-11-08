@@ -16,7 +16,7 @@
             <div class="problem-editor-toolbar flex1">
                 <div></div>
                 <div class="problem-editor-toolbar-right">
-                    <div class="problem-editor-toolbar-select-theme txt-link url">Change Theme</div>
+                    <!-- <div class="problem-editor-toolbar-select-theme txt-link url">Change Theme</div> -->
                     <div class="problem-editor-toolbar-select-language-label">Language</div>
                     <div>
                         <select id="languages" class="problem-editor-toolbar-select-languages">
@@ -32,15 +32,15 @@
         </div>
         <div class="flex1">
             <div></div>
-            <button class="btn-normal ui-btn btn-green msT" onclick="Problem.form.submit_code()">Submit</button>
+            <button id="submit-btn" class="btn-normal ui-btn btn-green msT mlB">Submit</button>
         </div>
-
-        <!-- <div class="problem-output"></div> -->
+        <div id="js-result"></div>
     </div>
 
 </div>
 
 <script>
+    var contest = JSON.parse('<?php echo $data['contest'] ?>');
     var problem = JSON.parse('<?php echo $data['problem'] ?>');
-    Problem.display.init(problem);
+    Problem.display.contest(contest, problem);
 </script>

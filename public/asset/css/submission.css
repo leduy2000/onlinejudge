@@ -24,3 +24,83 @@
     text-align: center;
 }
 
+.submission-submitted-at {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.submission-score {
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.submission-status {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.submission-status {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.submission-code-header {
+    margin-top: 20px;
+    display: flex;
+    padding: 10px;
+    border: 1px solid #b7c9cc;
+    background: #f3f7f7;
+    font-size: 14px;
+    justify-content: space-between;
+}
+
+.submission-result {
+    min-height: 400px;
+    max-height: 420px;
+}
+
+.submission-result-rows {
+    font-size: 18px;
+    width: 20%;
+    max-height: 420px;
+    overflow-y: scroll;
+}
+
+.submission-result-content {
+    font-size: 16px;
+    width: 80%;
+    padding: 10px;
+    max-height: 420px;
+    overflow: scroll;
+}
+
+.submission-result-btn {
+    padding: 15px;
+    text-align: center;
+    height: 50px;
+}
+
+.submission-result-wrap {
+    height: 520px;
+}
+
+.submission-result-io {
+    padding: 20px;
+    max-height: 80px;
+    background-color: #e7eeef;
+    margin-bottom: 50px;
+    overflow-y: scroll;
+}
+
+.submission-result-content-label {
+    color: #576871;
+    margin-bottom: 10px;
+}
+
+.submission-status-heading {
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    margin-bottom: 20px;
+}

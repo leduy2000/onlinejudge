@@ -26,6 +26,16 @@ class User extends DB {
         return null;
     }
 
+    public function by_id($id) {
+        $sql = "select * from Users where id = '$id'";
+        $rows = $this->execute($sql);
+        $data = $this->fetch($rows);
+        if (isset($data[0])) {
+            return $data[0];
+        }
+        return null;
+    }
+
     // public function get_users() {
     //     $data = [];
     //     $users = $this->get_all('User');

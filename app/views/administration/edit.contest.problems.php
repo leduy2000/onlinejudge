@@ -2,5 +2,6 @@
 
 <script>
     var contest = JSON.parse('<?php echo $data['contest'] ?>');
-    Contest.display.edit_problems(contest);
+    var problems = JSON.parse('<?php echo $data['problems'] ?>');
+    Contest.display.edit_problems(contest, problems);
 </script>

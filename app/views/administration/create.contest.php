@@ -1,5 +1,5 @@
 <div class="container">
-<div class="page-label">Create Contest</div>
+<div class="page-label" style="margin-top: 50px">Create Contest</div>
     <div class="input-row">
         <div class="input-label">Contest Name</div>
         <input id="name" class="normal-input" type="text">

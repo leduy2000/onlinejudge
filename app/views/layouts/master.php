@@ -15,6 +15,8 @@
     <script src="/onlinejudge/public/asset/js/utils.js"></script>
     <script src="/onlinejudge/public/asset/js/problem.js"></script>
     <script src="/onlinejudge/public/asset/js/contest.js"></script>
+    <script src="/onlinejudge/public/asset/js/testcase.js"></script>
+    <script src="/onlinejudge/public/asset/js/submission.js"></script>
     <script src="/onlinejudge/public/asset/js/ace/ace.js"></script>
     <script src="/onlinejudge/public/asset/js/ace/theme-monokai.js"></script>
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>

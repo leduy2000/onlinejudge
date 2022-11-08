@@ -1,7 +1,7 @@
 <div class="breadcrumb">
     <div class="container">
         <div style="margin-top: 30px; margin-bottom: 30px">
-            <div class="page-label">Problemset</div>
+            <div id="contest-name" class="page-label">Problemset</div>
         </div>
     </div>
 </div>
@@ -11,6 +11,7 @@
 </div>
 
 <script>
+    var contest = JSON.parse('<?php echo $data['contest'] ?>');
     var problems = JSON.parse('<?php echo $data['problems'] ?>');
-    Problem.board.practice(problems);
+    Problem.board.contest(contest, problems);
 </script>

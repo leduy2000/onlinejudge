@@ -3,9 +3,11 @@
 class Problemset extends Controller {
 
     public $problem_model;
+    public $submission_model;
 
     public function __construct() {
         $this->problem_model = $this->model("Problem");
+        $this->submission_model = $this->model("Submission");
     }
 
     public function index() {
@@ -25,36 +27,26 @@ class Problemset extends Controller {
         }
     }
 
-    public function create() {
+    public function submissions($id) {
         session_start();
-        $this->view("master", ["page" => "problemset/create"]);
+        $problem = json_encode($this->problem_model->byId($id));
+        if ($problem) {
+            $this->view("master", ["page" => "problemset/submissions", "problem" => $problem]);
+        } else {
+            $problems = json_encode($this->problem_model->all());
+            $this->view("master", ["page" => "problemset/problemset", "problems" => $problems]);
+        }
     }
 
-    public function user_create() {
+    public function submission($id) {
         session_start();
-        if ($_SESSION['username']) {
-            $name = $_POST['name'];
-            $difficulty = $_POST['difficulty'];
-            $time_limit = $_POST['time_limit'];
-            $memory_limit = $_POST['memory_limit'];
-            $statement = $_POST['statement'];
-            $sample_input = $_POST['sample_input'];
-            $sample_output = $_POST['sample_output'];
-            $user_id = $_SESSION['id'];
-            $data = [];
-            $data['name'] = $name;
-            $data['difficulty'] = $difficulty;
-            $data['time_limit'] = $time_limit;
-            $data['memory_limit'] = $memory_limit;
-            $data['statement'] = $statement;
-            $data['sample_input'] = $sample_input;
-            $data['sample_output'] = $sample_output;
-            $data['user_id'] = $user_id;
-            $data['since'] = $data['last_update'] = time();
-            $this->problem_model->create($data);
-            die(true);
+        $problem = json_encode($this->problem_model->byId($id));
+        if ($problem) {
+            $this->view("master", ["page" => "problemset/submission", "problem" => $problem]);
+        } else {
+            $problems = json_encode($this->problem_model->all());
+            $this->view("master", ["page" => "problemset/problemset", "problems" => $problems]);
         }
-        die(false);
     }
 
     public function user_submit() {
@@ -63,6 +55,7 @@ class Problemset extends Controller {
             $language = $_POST['language'];
             $code = $_POST['code'];
             $problem_id = $_POST['problem_id'];
+            $contest_id = $_POST['contest_id'];
             $time_limit = $_POST['time_limit'];
             $memory_limit = $_POST['memory_limit'];
             $data = [];
@@ -70,10 +63,14 @@ class Problemset extends Controller {
             $data['language'] = $language;
             $data['username'] = $_SESSION['username'];
             $data['problem_id'] = $problem_id;
+            $data['contest_id'] = $contest_id;
             $data['time_limit'] = $time_limit;
             $data['memory_limit'] = $memory_limit;
+            $data['user_id'] = $_SESSION['user_id'];
             $judge = new Judge($data);
-            $judge->process_submission();
+            $submission = $judge->process_submission();
+            $this->submission_model->create($submission);
+            die(json_encode($submission));
         }
         die(false);
     }

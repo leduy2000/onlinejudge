@@ -108,3 +108,48 @@
     padding: 20px;
     background-color: #e7eeef;
 }
+
+.problem-submissions-header {
+    padding-left: 30px;
+    padding-right: 210px;
+    height: 59.5938px;
+    background-color: #ffffff;
+    align-items: center;
+    font-size: 14px;
+    color: #738f93;
+    display: flex;
+    font-family: sans-serif;
+}
+
+.problem-submission-row {
+    position: relative;
+    font-size: 14px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    display: flex;
+    padding-right: 210px;
+}
+
+.result {
+    min-width: 220px;
+}
+
+.score {
+    min-width: 220px;
+    text-align: center;
+}
+
+.language {
+    min-width: 220px;
+    text-align: center;
+}
+
+.time {
+    min-width: 220px;
+    text-align: center;
+}
+
+.link {
+    position: absolute;
+    right: 20px;
+}
